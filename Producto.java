@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections; // <-- AJUSTE 1: Importamos Collections
-import java.util.List;
 
 abstract class Producto {
     private String nombre;

@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections; // <-- AJUSTE 1: Importamos Collections
 import java.util.List;
 
-public class CarritoCompras<T extends Producto> {
-    private List<T> items;
+public class CarritoCompras<T extends Producto> implements Iterable<T> {
+    private final List<T> items;
 
     public CarritoCompras() {
         this.items = new ArrayList<>();
@@ -39,5 +39,10 @@ public class CarritoCompras<T extends Producto> {
             }
         }
         return mayor;
+    }
+
+    @Override
+    public CarritoIterator<T> iterator() {
+        return new CarritoIterator<>(items);
     }
 }
