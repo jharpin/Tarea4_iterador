@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections; // <-- AJUSTE 1: Importamos Collections
+import java.util.Collections;
 import java.util.List;
 
 public class CarritoCompras<T extends Producto> implements Iterable<T> {
@@ -9,10 +9,9 @@ public class CarritoCompras<T extends Producto> implements Iterable<T> {
         this.items = new ArrayList<>();
     }
 
-    // <-- AJUSTE 2: Agregamos el método para retornar la lista protegida de solo
-    // lectura
     public List<T> getItems() {
         return Collections.unmodifiableList(this.items);
+
     }
 
     public void agregarProducto(T producto) {
